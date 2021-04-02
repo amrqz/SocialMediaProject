@@ -1,33 +1,70 @@
+export class PostDisplay extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {posts: this.props.postNow, formText: '', user: this.props.user};
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  
+  handleChange(text) {
+    this.setState({formText: text})
+    
+  }
+  
+  handleSubmit() {
+
+    let currentTime = new Date().toLocaleTimeString();
+    let post = {
+      text: this.state.formText,
+      time: currentTime,
+      user: this.props.user
+    }
+    let postCopy = this.state.posts;
+    postCopy.push(post);
+    this.setState({posts: postCopy, formText: ''});
+    
+  }
+  
+  render() {
+    let display = this.state.posts.map((x, i) => {return(<div key={i}>
+        <h3>{x.text}</h3>
+        <div>{x.user + '    '+ x.time}</div> 
+      </div>)})
+    return(
+      <div>
+      <div>{display}
+      </div>
+        <PostCreator formText={this.state.formText} onFormChange={this.handleChange} onFormSubmit={this.handleSubmit} />
+        </div>)
+  }
+}
+
+
 export class PostCreator extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { text: '' }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   
   handleChange(e) {
-    this.setState({text: e.target.value})
+    this.props.onFormChange(event.target.value)
   }
   
   handleSubmit() {
-    currentTime = new Date().toLocaleTimeString();
-    post = {
-      text: this.state.text,
-      time: currentTime,
-      user: this.props.userName
-    }
+    this.props.onFormSubmit()
   }
   
   render() {
     return(
       <div>
         <h1>Create post</h1>
-        <input type='text' placeholder='Enter post here' value={this.state.text} onChange={this.handleChange}/>
-        <button onSubmit={this.handleSubmit}>Post</button>
+        <input type='text' placeholder='Enter post here' value={this.props.formText} onChange={this.handleChange}/>
+        <button onClick={this.handleSubmit}>Post</button>
         </div>
       )
   }
 }
 
-ReactDOM.render(<PostCreator />, document.getElementById("root"));
+let postsHere = [{text: "Hi this is a post", time: "12:26:47", user: "me"}, {text: "Hi this is a post", time: "12:26:47", user: "me"}];
+ReactDOM.render(<PostDisplay postNow={postsHere} user={'me'} />, document.getElementById("root"));
