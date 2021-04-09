@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 export class PostDisplay extends React.Component {
   constructor(props){
     super(props);
-    console.log(this.props.postsNow);
     this.state = {posts: this.props.postsNow, formText: '', user: this.props.user};
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
