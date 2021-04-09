@@ -13,7 +13,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Social Media Project</h1>
       </header>
-      <PostDisplay posts={postsHere} />
+      <PostDisplay postsNow={postsHere} />
       <AmplifySignOut />
     </div>
   );
