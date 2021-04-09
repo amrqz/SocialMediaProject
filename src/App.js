@@ -13,7 +13,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <h1>Social Media Project</h1>
       </header>
-      <PostDisplay postsNow={postsHere} user="aelyssa" />
+      <PostDisplay postsNow={[{text: "Hi this is a post", time: "12:26:47", user: "me"}, {text: "Hi this is a post", time: "12:26:47", user: "me"}]} user="aelyssa" />
       <AmplifySignOut />
     </div>
   );
