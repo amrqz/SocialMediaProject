@@ -1,3 +1,6 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 export class PostDisplay extends React.Component {
   constructor(props){
     super(props);
@@ -48,7 +51,7 @@ export class PostCreator extends React.Component {
   }
   
   handleChange(e) {
-    this.props.onFormChange(event.target.value)
+    this.props.onFormChange(e.target.value)
   }
   
   handleSubmit() {
@@ -66,5 +69,5 @@ export class PostCreator extends React.Component {
   }
 }
 
-let postsHere = [{text: "Hi this is a post", time: "12:26:47", user: "me"}, {text: "Hi this is a post", time: "12:26:47", user: "me"}];
-ReactDOM.render(<PostDisplay postNow={postsHere} user={'me'} />, document.getElementById("root"));
+//let postsHere = [{text: "Hi this is a post", time: "12:26:47", user: "me"}, {text: "Hi this is a post", time: "12:26:47", user: "me"}];
+//ReactDOM.render(<PostDisplay postNow={postsHere} user={'me'} />, document.getElementById("root"));
