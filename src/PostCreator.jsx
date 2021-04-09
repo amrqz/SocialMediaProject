@@ -61,9 +61,8 @@ export class PostCreator extends React.Component {
   render() {
     return(
       <div>
-        <input type='text' rows='5' cols='40' placeholder='Enter post here' value={this.props.formText} onChange={this.handleChange}/>
+        <input type='text' style={{rows:'5', cols:'40'}} placeholder='Enter post here' value={this.props.formText} onChange={this.handleChange}/>
         <button onClick={this.handleSubmit}>Post</button>
-        <br />
         </div>
       )
   }

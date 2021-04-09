@@ -13,6 +13,7 @@ function App() {
         <h1>Social Media Project</h1>
       </header>
       <PostDisplay postsNow={[]} user="aelyssa" />
+      <br />
       <AmplifySignOut />
     </div>
   );
