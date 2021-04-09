@@ -4,9 +4,9 @@ import React from 'react';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 import { PostDisplay } from './PostCreator.jsx'
 
-const postsHere = [{text: "Hi this is a post", time: "12:26:47", user: "me"}, {text: "Hi this is a post", time: "12:26:47", user: "me"}];
 
 function App() {
+  const postsHere = [{text: "Hi this is a post", time: "12:26:47", user: "me"}, {text: "Hi this is a post", time: "12:26:47", user: "me"}];
   return (
     <div className="App">
       <header className="App-header">
