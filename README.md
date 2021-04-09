@@ -12,14 +12,23 @@ This should direct you to the AWS website to sign in and connect you to the serv
 If you go back to the command line once signed in, it will ask you to set up the project - for most of the questions, just leave the default answer and it should set up correctly - it should look something like this:
 
 ? Choose your default editor: Visual Studio Code
+
 ? Choose the type of app that you're building javascript
+
 Please tell us about your project
+
 ? What javascript framework are you using react
+
 ? Source Directory Path:  src
+
 ? Distribution Directory Path: build
+
 ? Build Command:  npm.cmd run-script build
+
 ? Start Command: npm.cmd run-script start
+
 ? Do you plan on modifying this backend? Yes
+
 √ Successfully pulled backend environment staging from the cloud.
 
 # Getting Started with Create React App
