@@ -16,7 +16,7 @@ export class PostDisplay extends React.Component {
   
   handleSubmit() {
 
-    let currentTime = new Date().toLocaleTimeString();
+    let currentTime = new Date().toString();
     let post = {
       text: this.state.formText,
       time: currentTime,
@@ -61,9 +61,9 @@ export class PostCreator extends React.Component {
   render() {
     return(
       <div>
-        <h1>Create post</h1>
-        <input type='text' placeholder='Enter post here' value={this.props.formText} onChange={this.handleChange}/>
+        <input type='text' rows='5' cols='40' placeholder='Enter post here' value={this.props.formText} onChange={this.handleChange}/>
         <button onClick={this.handleSubmit}>Post</button>
+        <br />
         </div>
       )
   }
