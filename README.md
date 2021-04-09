@@ -2,7 +2,7 @@
 
 First, run:
 
-### `npm start`
+### `npm install`
 
 Then, connect to the AWS server by running this command:
 
