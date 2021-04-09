@@ -16,7 +16,7 @@ export class PostDisplay extends React.Component {
   
   handleSubmit() {
 
-    let currentTime = new Date().toString();
+    let currentTime = new Date().toLocaleString();
     let post = {
       text: this.state.formText,
       time: currentTime,
