@@ -37,8 +37,8 @@ function App() {
     setFormText('');
   }
 
-  function handleChange(e) {
-    setFormText(e.target.value);
+  function handleChange(value) {
+    setFormText(value);
   }
 
   return (

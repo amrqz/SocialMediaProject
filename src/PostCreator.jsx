@@ -21,8 +21,8 @@ export class PostCreator extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   
-  handleChange(e) {
-    this.props.onFormChange(e)
+  handleChange(event) {
+    this.props.onFormChange(event.target.value)
   }
   
   handleSubmit() {
