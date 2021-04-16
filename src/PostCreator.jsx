@@ -22,7 +22,7 @@ export class PostCreator extends React.Component {
   }
   
   handleChange(e) {
-    this.props.onFormChange(e.target.value)
+    this.props.onFormChange(e)
   }
   
   handleSubmit() {
