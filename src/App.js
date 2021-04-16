@@ -3,8 +3,8 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react'
 import { API } from 'aws-amplify';
-import { listNotes } from './graphql/queries';
-import { createNote as createNoteMutation } from './graphql/mutations';
+import { listPosts } from './graphql/queries';
+import { createPost as createNoteMutation } from './graphql/mutations';
 import { Auth } from 'aws-amplify';
 import { PostDisplay, PostCreator } from './PostCreator.jsx';
 
@@ -18,8 +18,8 @@ function App() {
   }, []);
 
   async function fetchPosts() {
-    const apiData = await API.graphql({ query: listNotes });
-    setPosts(apiData.data.listNotes.items);
+    const apiData = await API.graphql({ query: listPosts });
+    setPosts(apiData.data.listPosts.items);
   }
 
   async function createPosts() {
