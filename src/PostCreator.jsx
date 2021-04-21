@@ -1,4 +1,5 @@
 import React from 'react';
+import './PostCreator.css';
 
 export class PostDisplay extends React.Component {
 
