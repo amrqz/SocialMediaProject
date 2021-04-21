@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "socialmediaprojectbee47d35_identitypool_bee47d35",
-    "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "socialbee47d35",
-    "userPoolName": "socialmediaprojectbee47d35_userpool_bee47d35",
+    "identityPoolName": "socialmediaproject5249cdff_identitypool_5249cdff",
+    "allowUnauthenticatedIdentities": true,
+    "resourceNameTruncated": "social5249cdff",
+    "userPoolName": "socialmediaproject5249cdff_userpool_5249cdff",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -12,7 +12,7 @@
     ],
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
-    "emailVerificationSubject": "Your verification code",
+    "emailVerificationSubject": "0000",
     "emailVerificationMessage": "Your verification code is {####}",
     "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
@@ -28,10 +28,10 @@
     "userpoolClientReadAttributes": [
         "email"
     ],
-    "userpoolClientLambdaRole": "socialbee47d35_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "social5249cdff_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": false,
-    "sharedId": "bee47d35",
-    "resourceName": "socialmediaprojectbee47d35",
+    "sharedId": "5249cdff",
+    "resourceName": "socialmediaproject5249cdff5249cdff",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -45,9 +45,18 @@
             "Arn"
         ]
     },
-    "useDefault": "default",
+    "useDefault": "manual",
+    "thirdPartyAuth": false,
+    "userPoolGroups": false,
+    "adminQueries": true,
+    "triggers": "{}",
+    "hostedUI": false,
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
+    "parentStack": {
+        "Ref": "AWS::StackId"
+    },
+    "permissions": [],
     "dependsOn": []
 }
