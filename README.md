@@ -1,4 +1,4 @@
-# Webpage hosted on link:
+# Webpage link:
 
 https://master.d3vhep04hc9ijj.amplifyapp.com/
 

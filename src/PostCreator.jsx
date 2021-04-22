@@ -4,12 +4,12 @@ import './PostCreator.css';
 export class PostDisplay extends React.Component {
 
   render() {
-    let display = this.props.postsNow.map((x, i) => {return(<div key={i}>
+    let display = this.props.postsNow.map((x, i) => {return(<div key={i} class="Post">
         <h3>{x.text}</h3>
         <div>{x.user + '    '+ x.time}</div> 
       </div>)})
     return(
-      <div>{display}
+      <div class="PostDisplay">{display}
       </div>)    
   }
 }
