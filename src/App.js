@@ -19,7 +19,7 @@ function App() {
 
   async function fetchPosts() {
     const apiData = await API.graphql({ query: listPosts });
-    setPosts(apiData.data.listPosts.items);
+    setPosts(apiData.data.listPosts.items.reverse());
   }
 
   async function createPosts() {
