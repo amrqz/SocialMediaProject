@@ -19,7 +19,9 @@ function App() {
 
   async function fetchPosts() {
     const apiData = await API.graphql({ query: listPosts });
-    setPosts(apiData.data.listPosts.items);
+    const postList = apiData.data.listPosts.items;
+    const sortedPostList = postList.sort((a, b) => a.time - b.time);
+    setPosts(sortedPostList);
   }
 
   async function createPosts() {
