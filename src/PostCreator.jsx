@@ -6,7 +6,7 @@ export class PostDisplay extends React.Component {
   render() {
     let display = this.props.postsNow.map((x, i) => {return(<div key={i} class="Post">
         <h3>{x.text}</h3>
-        <div>{x.user + '    '+ x.time}</div> 
+        <div>{x.user + '    '+ x.time.toLocaleString()}</div> 
       </div>)})
     return(
       <div class="PostDisplay">{display}
