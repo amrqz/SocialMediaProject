@@ -28,7 +28,7 @@ function App() {
     const user = await Auth.currentAuthenticatedUser();
     let userName = user.username;
 
-    let currentTime = new Date().toLocaleString();
+    let currentTime = new Date();
     let post = {
       text: formText,
       time: currentTime,
