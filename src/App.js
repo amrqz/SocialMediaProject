@@ -19,16 +19,14 @@ function App() {
 
   async function fetchPosts() {
     const apiData = await API.graphql({ query: listPosts });
-    const postList = apiData.data.listPosts.items;
-    const sortedPostList = postList.sort((a, b) => a.time - b.time);
-    setPosts(sortedPostList);
+    setPosts(apiData);
   }
 
   async function createPosts() {
     const user = await Auth.currentAuthenticatedUser();
     let userName = user.username;
 
-    let currentTime = new Date();
+    let currentTime = new Date.toLocaleString();
     let post = {
       text: formText,
       time: currentTime,
