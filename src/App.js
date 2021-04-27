@@ -21,8 +21,8 @@ function App() {
     const apiData = await API.graphql({ query: listPosts });
     let postList = apiData.data.listPosts.items;
     postList = postList.sort(function(a, b) {
-      let dateSplitA = a.split(' ');
-      let dateSplitB = b.split(' ');
+      let dateSplitA = a.time.split(' ');
+      let dateSplitB = b.time.split(' ');
       dateSplitA[0].replace(',', '');
       dateSplitB[0].replace(',', '');
       dateSplitA[0] = dateSplitA[0].split('/');
