@@ -40,7 +40,6 @@ function App() {
         }
       } 
       return 0;
-
     });
     setPosts(postList);
   }
@@ -49,7 +48,7 @@ function App() {
     const user = await Auth.currentAuthenticatedUser();
     let userName = user.username;
 
-    let currentTime = new Date.toLocaleString();
+    let currentTime = new Date().toLocaleString();
     let post = {
       text: formText,
       time: currentTime,
