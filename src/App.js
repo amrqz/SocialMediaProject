@@ -36,7 +36,7 @@ function App() {
       }  
       for (let x=0; x<2; x++){
         if (dateSplitA[1][x] !== dateSplitB[1][x]) {
-          return dateSplitB[1][x] - dateSplitA[1][x];
+          return dateSplitA[1][x] - dateSplitB[1][x];
         }
       } 
       return 0;
