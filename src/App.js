@@ -20,10 +20,28 @@ function App() {
   async function fetchPosts() {
     const apiData = await API.graphql({ query: listPosts });
     let postList = apiData.data.listPosts.items;
-    postList = postList.sort((a, b) => b.time.getTime() - a.time.getTime());
-    postList = postList.sort((a, b) => b.time.getDate() - a.time.getDate());
-    postList = postList.sort((a, b) => b.time.getMonth() - a.time.getMonth());
-    postList = postList.sort((a, b) => b.time.getFullYear() - a.time.getFullYear());
+    postList = postList.sort(function(a, b) {
+      let dateSplitA = a.split(' ');
+      let dateSplitB = b.split(' ');
+      dateSplitA[0].replace(',', '');
+      dateSplitB[0].replace(',', '');
+      dateSplitA[0] = dateSplitA[0].split('/');
+      dateSplitB[0] = dateSplitB[0].split('/');
+      dateSplitA[1] = dateSplitA[1].split(':');
+      dateSplitB[1] = dateSplitB[1].split(':');
+      for (let x=2; x>0; x = x-1){
+        if (dateSplitA[0][x] !== dateSplitB[0][x]) {
+          return dateSplitB[0][x] - dateSplitA[0][x];
+        }
+      }  
+      for (let x=2; x>0; x = x-1){
+        if (dateSplitA[1][x] !== dateSplitB[1][x]) {
+          return dateSplitB[1][x] - dateSplitA[1][x];
+        }
+      } 
+      return 0;
+
+    });
     setPosts(postList);
   }
 
@@ -31,7 +49,7 @@ function App() {
     const user = await Auth.currentAuthenticatedUser();
     let userName = user.username;
 
-    let currentTime = new Date();
+    let currentTime = new Date.toLocaleString();
     let post = {
       text: formText,
       time: currentTime,
