@@ -8,6 +8,10 @@ First, run:
 
 ### `npm install`
 
+Install AWS Amplify CLI:
+
+### `npm install -g @aws-amplify/cli`
+
 Then, connect to the AWS server by running this command:
 
 ### `amplify pull --appId d3vhep04hc9ijj --envName staging`
@@ -34,6 +38,15 @@ Please tell us about your project
 ? Do you plan on modifying this backend? Yes
 
 √ Successfully pulled backend environment staging from the cloud.
+
+
+Next:
+
+! Install Amplify Libraries:
+
+### `npm install aws-amplify @aws-amplify/ui-react`
+
+
 
 # Getting Started with Create React App
 
